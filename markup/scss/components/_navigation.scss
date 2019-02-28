@@ -1,0 +1,165 @@
+.menu-toggle { 
+	@include media('<desktop') {
+		display: inline-block;
+		position: absolute;
+		padding: 5px;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+		cursor: pointer;
+	}
+
+	display: none; 
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+	content: '';
+	display: block;
+	background-color: $dark-blue;
+	height: 3px;
+	width: 2em;
+	border-radius: 3px;
+	-webkit-transition: all ease-in-out 350ms;
+	transition: all ease-in-out 350ms;
+
+	&:hover {
+		background-color: $aquamarine;
+	}
+}
+
+.hamburger::before {
+	-webkit-transform: translateY(-7px);
+	transform: translateY(-7px);
+}
+
+.hamburger::after {
+	-webkit-transform: translateY(4px);
+	transform: translateY(4px);
+}
+
+.open .hamburger {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.open .hamburger::before { 
+	display: none; 
+}
+
+.open .hamburger::after {
+	-webkit-transform: translateY(-1px) rotate(-90deg);
+	transform: translateY(-1px) rotate(-90deg);
+}
+
+.site-nav {
+	margin-left: -50px;
+	flex-direction: row;
+	justify-content: space-between;
+	text-align: center;
+	padding-left: 50px;
+
+	.opening {
+		position: absolute;
+		left: 0;
+		top: 40px;
+		display: block;
+		height: 45px;
+		z-index: 999999;
+	}
+
+	ul {
+		@include media('<desktop') {
+			width: 100%;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: none;
+		}
+
+		font-weight: 700;
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	li {
+		@include media('<desktop') {
+			border-bottom: 1px solid $greyblue-dark; 
+
+			&:last-child { 
+				border-bottom: none; 
+			}
+		}
+
+		flex: 1 1 auto;
+		border: none;
+
+		.nav-link {
+			@include animate ('background-color, border-color');
+
+			@include media ('<desktop') {
+				background-color: $greyblue-light;
+
+				&:hover,
+				&:focus {
+					background-color: $aquamarine;
+					color: white;
+				}
+			}
+
+			display: block;
+			padding: 19px 21px;
+			text-transform: uppercase;
+			text-decoration: none;
+			margin: 0;
+			background-color: $white;
+			border: 1px solid $white;
+
+			&:hover,
+			&:focus {
+				background-color: $greyblue-light;
+				border: 1px solid $greyblue-dark;
+			}
+		}
+	}
+}
+
+.dropdown {
+	position: relative;
+
+	.dropdown-menu {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		display: none;
+		z-index: 2;
+		min-width: 210px;
+		height: 45px;
+
+		li {
+			text-align: left;
+		}
+
+		a {
+			@include animate ('background-color', 'color')
+			
+			background-color: $greyblue-light;
+			border-color: $greyblue-dark;
+
+			&:hover {
+				border-color: $aquamarine;
+				background-color: $aquamarine;
+				color: $white;
+			}
+		}
+	}
+
+	&:hover {
+		.dropdown-menu {
+			display: block;
+		}
+	}
+}

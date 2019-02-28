@@ -1,0 +1,175 @@
+.footer-main {
+	color: $footer-main-text-color;
+	background-color: $footer-main-background-color;
+
+	h4 {
+		color: $footer-heading-text-color;
+		text-transform: uppercase;
+		font-size: 16px;
+		font-family: 'Lato', sans-serif;
+		font-weight: 700;
+		margin-bottom: 16px;
+	}
+
+	p {
+		font-size: 14px;
+		margin-bottom: 16px;
+	}
+}
+
+.footer-wrapper {
+	@include media ('<desktop') {
+		flex-wrap: wrap;
+	}
+
+	@include media ('<phone') {
+		display: block;
+		padding: 20px 0;
+	}
+
+	padding: 53px 0;
+	display: flex;
+}
+
+.footer-column {
+	@include media ('<desktop') {
+		max-width: 50%;
+	}
+
+	@include media ('<phone') {
+		display: block;
+		max-width: 100%;
+		padding: 10px 0;
+	}
+
+	padding: 15px; 
+	max-width: 25%;
+	display: inline-block;
+}
+
+.footer-logo-holder {
+	max-width: 129px;
+	padding: 5px 0 17px;
+
+	img {
+		@include animate ('opacity');
+		
+		opacity: 1;
+		display: block;
+											
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+.txt-link {
+	font-size: 14px;
+	font-weight: 700;
+
+	.icon-arrow-right-01 {
+		@include animate ('margin-left');
+
+		margin-left: 8px;
+		font-size: 8px;
+	}
+
+	&:hover {
+		.icon-arrow-right-01 {
+			margin-left: 13px;
+		}
+	}
+}
+
+.contacts {
+	list-style: none;
+	font-size: 14px;
+
+	i {
+		margin-right: 11px;
+	}
+
+	li:last-child {
+		margin-left: -2px;
+	}
+
+	.icon-mail-01 {
+		font-size: 10px;
+	}
+}
+
+.footer-bottom {
+	@include media ('<tablet') {
+		padding: 15px 0;
+	}
+
+	@include media ('<phone') {
+		font-size: 10px;
+	}
+
+	background-color: $footer-bottom-background-color;
+	font-size: 14px;
+	color: $footer-bottom-text-color;
+	padding: 31px 0;
+}
+
+.copyright {
+
+	@include media ('<tablet') {
+		float: none;
+	}
+
+	float: left;
+	text-align: center;
+
+	p {
+		margin: 0;
+	}
+}
+
+.footer-nav {
+	@include media ('<tablet') {
+		float: none;
+		text-align: center;
+	}
+
+	@include media ('<phone') {
+		text-align: left;
+	}
+	
+	float: right;
+
+	ul {
+		@include media ('<tablet') {
+			display: inline-block;
+		}
+
+		list-style: none;
+	}
+
+	li {
+		@include media ('<phone') {
+			padding-left: 5px;
+		}
+
+		float: left;
+		padding-left: 10px;
+
+		&:before {
+			@include media ('<phone') {
+				padding-right: 5px;
+			}
+			
+			content: "\00B7";
+			padding-right: 10px;
+		}
+
+		&:first-child {
+			padding-left: 0;
+			
+			&:before{
+				content: none;
+			}
+		}
+	}
+}

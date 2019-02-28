@@ -1,0 +1,23 @@
+#up-button {
+	@include animate (background-color color);
+
+	width: 40px;
+	height: 40px;
+	display: none;
+	position: fixed;
+	bottom: 22px; 
+	right: 20px;
+	z-index: 99999;
+	border: none;
+	outline: none;
+	background-color: $up-btn-background-color; 
+	color: $up-btn-text-color; 
+	cursor: pointer; 
+	border-radius: 3px; 
+	font-size: 10px; 
+
+	&:hover {
+		background-color: $up-btn-background-color-hover;
+		color: $up-btn-text-color-hover;
+	}
+}

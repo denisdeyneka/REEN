@@ -1,0 +1,305 @@
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.about {
+	padding: 119px 0;
+	text-align: center;
+}
+
+.article-box {
+	display: flex;
+	padding-top: 53px;
+	flex-wrap: wrap;
+
+	.info {
+		@include media ('<tablet') {
+			width: 100%;
+		}
+
+		display: inline-flex;
+		width: 33%;
+	}
+	
+	.text-box {
+		display: inline-block;
+		padding: 0 10px;
+		text-align: left;
+
+		h6 {
+			font-family: 'Lato', sans-serif;
+			font-weight: 700; 
+			font-size: 26px;
+			margin-bottom: 27px;
+		}
+
+		p {
+			font-size: 16px;
+		}
+	}
+
+	.icon-holder {
+		@include media ('<tablet') {
+			font-size: 55px;
+		}
+
+		@include media ('<phone') {
+			min-width: 75px;
+			font-size: 45px;
+		}
+
+		min-width: 100px;
+		color: $aquamarine;
+		font-size: 65px;
+		padding: 0 10px 0 15px;
+		margin-top: -3px;
+	}
+}
+
+.gallery {
+	padding: 119px 0;
+	background-color: $athens-gray;
+}
+
+.album {
+	@include media ('<tablet') {
+		display: block;
+	}
+
+	display: flex;
+	justify-content: space-between;
+	padding-top: 57px;
+
+	.img-holder {
+		position: relative;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+	}
+	
+	.futured-works {
+		@include media ('<tablet') {
+			display: block;
+			width: 100%;
+
+			padding: 20px 0;
+		}
+
+		width: 50%;
+		display: inline-block;
+		margin: 0;
+		
+		&:first-child {
+			@include media ('<tablet') {
+				padding: 0 0 20px;
+			}
+
+			padding-right: 15px;
+		}
+
+		&:last-child {
+			@include media ('<tablet') {
+				padding: 0;
+			}
+
+			padding-left: 15px;
+		}
+	}
+
+	figcaption {
+		border: 1px solid $greyblue-dark;
+		border-top: none;
+		padding: 25px;
+		text-align: center;
+		background-color: $white;
+		
+		a {
+			@include animate(color)
+
+			color: $base-heading-text-color;
+			text-decoration: none;
+			font-size: 20px;
+			font-weight: 700;
+
+			&:hover {
+				color: $base-link-color-hover;
+			}
+		}
+
+		p {
+			font-size: 14px;
+		}
+	}
+}
+
+.intouch {
+	@include media ('<desktop') {
+		padding: 56px 0 65px;
+	}
+
+	padding: 113px 0 130px;
+
+	.btn-holder {
+		text-align: center;
+		padding-top: 24px;
+	}
+
+	.btn-link {
+		padding: 10px 26px;
+	}
+}
+
+.main-heading {
+	h1 {
+		@include media ('<desktop') {
+			font-size: 60px;
+		}
+
+		@include media ('<tablet') {
+			font-size: 48px;
+		}
+
+		@include media ('<phone') {
+			font-size: 30px;
+		}
+
+		font-family: 'Lato', sans-serif;
+		font-weight: 900;
+		font-size: 78px;
+		text-transform: uppercase;
+		color: $white;
+		margin-bottom: 8px;
+		line-height: normal;
+
+		span {
+			@include media ('<phone') {
+				padding: 12px 20px;
+			}
+
+			display: inline-block;
+			background-color: $dark-blue;
+			padding: 16px 43px;
+			margin-bottom: 5px;
+		}
+	}
+
+	p {
+		@include media ('<desktop') {
+			font-size: 18px;
+		}
+
+		@include media ('<tablet') {
+			font-size: 14px;
+		}
+
+		@include media ('<phone') {
+			font-size: 10px;
+		}
+
+		font-size: 24px;
+		margin-bottom: 60px;
+	}
+}
+
+.section-heading {
+	max-width: 780px;
+	text-align: center;
+	margin: 0 auto;
+
+	h3 {
+		@include media ('<tablet') {
+			font-size: 35px;
+		}
+
+		color: $base-heading-text-color;
+		font-size: 44px;
+		font-weight: 700;
+		font-family: 'Lato', sans-serif;
+	}
+
+	p {
+		@include media ('<tablet') {
+			font-size: 18px;
+		}
+
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 22px;
+	}
+}
+
+.overlay {
+	@include animate (opacity)
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	background-color: $aquamarine;
+
+	&:after {
+		position: absolute;
+		content: "+";
+		color: $white;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 60px;
+		z-index: 88888;
+		opacity: 1;
+	}
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+.small-gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -5px;
+	padding-top: 5px;
+
+	.gallery-item {
+		display: inline-block;
+		width: 50%;
+		padding: 0 0 5px 5px;
+
+		figure {
+			position: relative;
+		}
+	}
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	font-family: $base-font-family;
+}
+
+a {
+	@include animate(color)
+
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		color: $base-link-color-hover;
+	}
+}
+
+body {
+	line-height: 1.5;
+}
+
+figure {
+	margin: 0;
+}

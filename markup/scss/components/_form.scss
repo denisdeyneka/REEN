@@ -1,0 +1,73 @@
+.subscribe {
+	@include media ('<tablet') {
+		width: 270px;
+	}
+
+	@include animate ('background-color');
+
+	padding: 5px 5px 5px 12px;
+	width: 100%;
+	margin: 0 0 25px 0;
+	height: 40px;
+	background-color: $input-field-backgraund-color;
+	border-radius: 3px;
+	text-align: justify;
+	display: flex;
+	justify-content: space-between;
+
+	&:hover,
+	&:focus {
+		background-color: $input-field-backgraund-color-hover
+	}
+}
+
+input[type="email"] {
+	display: inline-block;
+	border: none;
+	margin: 0;
+	outline: none;
+	-webkit-appearance: none;
+	height: 100%;
+	vertical-align: top;
+	background-color: inherit;
+	color: $input-text-color;
+	font-size: 14px;
+	padding: 0;
+	width: 65%;
+}
+
+input::-webkit-input-placeholder {
+	color: $input-placeholder-text-color;
+	font-size: 14px;
+}
+
+input:-moz-input-placeholder {
+	color: $input-placeholder-text-color;
+	font-size: 14px;
+}
+
+input:-ms-input-placeholder {
+	color: $input-placeholder-text-color;
+	font-size: 14px;
+}
+
+button[type="submit"] {
+	margin: 0;
+	display: inline-block;
+	cursor: pointer;
+	min-width: 30%;
+	padding: 0 11px;
+	background-color: $button-background-color;
+	border: none;
+	color: $button-text-color;
+	font-size: 13px;
+	font-weight: 700; 
+	border-radius: 3px;
+	border-bottom: 2px solid $button-border-color;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $button-background-color-hover;
+		border-bottom-color: $button-border-color-hover;
+	}
+}

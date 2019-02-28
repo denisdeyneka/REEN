@@ -1,0 +1,134 @@
+.navbar-header {
+	background-color: $header-bar-bgn-color;
+	border-bottom: 1px solid $header-bar-border-color;
+	color: $header-text-color;
+}
+
+.contact {
+	list-style: none;
+	margin: 0;
+	padding: 11px 0;
+	float: left;
+	font-size: 12px;
+
+	li {
+		float: left;
+		padding-right: 28px;
+	}
+
+	i {
+		padding-right: 10px;
+	}
+}
+
+.socials {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: right;
+	font-size: 12px;
+
+	li {
+		@include animate(background-color);
+		
+		min-width: 30px;
+		float: left;
+		text-align: center;
+		
+		a {
+			display: block;
+			padding: 11px 0;
+			color: inherit;
+		}
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	.facebook:hover {
+		background-color: #4668b3;
+	}
+
+	.google-plus:hover {
+		background-color: #de5745;
+	}
+
+	.twitter:hover {
+		background-color: #2fbbed;
+	}
+
+	.pinterest:hover {
+		background-color: #d94348;
+	}
+
+	.behance:hover {
+		background-color: #3079ff;
+	}
+
+	.dribbble:hover {
+		background-color: #eb6397;
+	}
+}
+
+.navigation {
+	border-bottom: 1px solid $greyblue-dark;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background-color: $white;
+	color: #506a85;
+}
+
+.fixed {
+	@include animate ('padding');
+
+	@include media ('<desktop') {
+		padding: 20px 0;
+	}
+
+	padding: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 888888;
+	box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
+
+	.logo-holder {
+		@include animate ('max-width');
+
+		max-width: 80px;
+	}
+}
+
+.header-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+}
+
+.logo-holder {
+	display: inline-block;
+	max-width: 161px;
+
+	img {
+		@include animate ('opacity');
+		
+		display: block;
+		width: 100%;
+		height: auto;
+
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+}
+
+.search-box {
+	@include media ('<desktop') {
+		display: none;
+	}
+
+	display: inline-block;
+	padding-right: 23px;
+}
