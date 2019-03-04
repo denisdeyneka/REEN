@@ -1,3 +1,4 @@
+// fixed bar
 $(function(){
 	createSticky($("#sticky-header"));
 });
@@ -14,6 +15,8 @@ function createSticky(sticky) {
 	}
 } 
 
+// big slick-carousel
+
 $('.big-carousel').slick({
 	prevArrow: $('.big-prev'),
 	nextArrow: $('.big-next'),
@@ -23,6 +26,8 @@ $('.big-carousel').slick({
 	autoplaySpeed: 2000,
 	dots: true,
 });
+
+//small slick-carousel
 
 $('.small-carousel').slick({
 	prevArrow: $('.prev'),
@@ -59,12 +64,14 @@ $('.small-carousel').slick({
   ]
 });
 
+//burger-menu
+
 $('.menu-toggle').click(function() {
   $('ul').toggleClass('opening');
   $(this).toggleClass('open');
 })
 
-// up-button
+//scroll- up button
 
 window.onscroll = function() {scrollFunction()};
 
@@ -77,6 +84,7 @@ function scrollFunction() {
 }
 
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+$('html,body').animate({
+        scrollTop: $("header").offset().top},
+        'slow');
 }
