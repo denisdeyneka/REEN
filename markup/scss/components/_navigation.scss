@@ -98,7 +98,7 @@
 		border: none;
 
 		.nav-link {
-			@include animate ('background-color, border-color');
+			@include animate (background-color border-color color);
 
 			@include media ('<desktop') {
 				background-color: $greyblue-light;
@@ -144,7 +144,7 @@
 		}
 
 		a {
-			@include animate ('background-color', 'color')
+			@include animate (background-color color)
 			
 			background-color: $greyblue-light;
 			border-color: $greyblue-dark;
